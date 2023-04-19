@@ -4,6 +4,19 @@
 
 ### Arch-Linux
 
+```bash
+sudo ./req-arch-linux.sh
 ```
-sudo ./req-arch-linux.sh.sh
+
+### Ubuntu
+
+```bash
+sudo ./req-ubuntu.sh
+```
+
+## Iniciando el cluster
+
+```bash
+cd k8s-files
+vagrant up
 ```
