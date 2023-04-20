@@ -17,7 +17,7 @@ sudo ./req-ubuntu.sh
 ## Iniciando el cluster
 
 ```bash
-cd k8s-files
+cd k8s-rancher
 vagrant up
 ```
 
