@@ -114,3 +114,5 @@ docker run --privileged -d --restart=unless-stopped -v /opt/rancher:/var/lib/ran
 ![ New Cluster Config ](/images/create-custom-config.png)
 
 ![ Cluster Node Config ](/images/cluster-node-registration.png)
+
+![ Node Registration ](/images/node-registration.png)
