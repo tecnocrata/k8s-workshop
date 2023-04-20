@@ -29,10 +29,10 @@ vagrant up
    ip addr
    ```
 
-1. Inicie sesion en cada nodo uno por uno, NO inicies las sesiones al mismo tiempo, ni ejecutes los comandos al mismo tiempo en los nodos, eso podria causar problemas posteriores. Empezamos con el nodo `192.168.56.211`. El password de cada nodo es `kubeadmin`
+1. Inicie sesion en cada nodo uno por uno, NO inicies las sesiones al mismo tiempo, ni ejecutes los comandos al mismo tiempo en los nodos, eso podria causar problemas posteriores. Empezamos con el nodo `192.168.58.211`. El password de cada nodo es `kubeadmin`
 
    ```bash
-   ssh root@192.168.56.211
+   ssh root@192.168.58.211
    ```
 
 1. Instalar docker en cada nodo, copia el bloque de comandos y pegalo en la terminal donde iniciaste la sesion con ssh
@@ -60,9 +60,9 @@ vagrant up
    systemctl daemon-reload && systemctl restart docker
    ```
 
-1. Repite desde el paso 2 ahora con los nodos `192.168.56.212` y `192.168.56.213`
+1. Repite desde el paso 2 ahora con los nodos `192.168.58.212` y `192.168.58.213`
    ```bash
-    ssh root@192.168.56.212
+    ssh root@192.168.58.212
    ```
 
 ## Levantar un registry privado
@@ -91,7 +91,7 @@ vagrant up
 docker run --privileged -d --restart=unless-stopped -v /opt/rancher:/var/lib/rancher -p 8080:80 -p 443:443 rancher/rancher
 ```
 
-- Despues de uno o dos minutos puedes navegar hacia la direccion `https://192.168.56.211` y obtendras la siguiente advertencia, acepta el riesgo y continua
+- Despues de uno o dos minutos puedes navegar hacia la direccion `https://192.168.58.211` y obtendras la siguiente advertencia, acepta el riesgo y continua
 
   ![ Advertencia de Seguridad](/images/rancher-warning.png)
 
