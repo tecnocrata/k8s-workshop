@@ -104,3 +104,13 @@ docker run --privileged -d --restart=unless-stopped -v /opt/rancher:/var/lib/ran
 ![ Rancher welcome ](/images/rancher-welcome.png)
 
 ## Deployar el cluster de K8s
+
+![ Cluster Management ](/images/rancher-cluster.png)
+
+![ Create Cluster](/images/create-cluster.png)
+
+![ Custom Cluster](/images/custom-cluster.png)
+
+![ New Cluster Config ](/images/create-custom-config.png)
+
+![ Cluster Node Config ](/images/cluster-node-registration.png)
