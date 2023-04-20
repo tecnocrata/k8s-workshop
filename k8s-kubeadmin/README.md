@@ -14,7 +14,7 @@ sudo ./req-arch-linux.sh
 sudo ./req-ubuntu.sh
 ```
 
-## Iniciando el cluster
+## Iniciando las maquinas virtuales y futuros nodos
 
 ```bash
 cd k8s-rancher
@@ -117,14 +117,13 @@ docker run --privileged -d --restart=unless-stopped -v /opt/rancher:/var/lib/ran
 
 ![ Node Registration ](/images/node-registration.png)
 
-
 ## Configurar kubectl en la maquina host
-   
-- Descarga el archivo de configuracion de kubernetes y colocalo dentro de `~/.kube/config`
-- Ejecuta los siguientes comandos para hacer una prueba 
 
- ```
- kubectl get pods
- kubectl run nginx --image=nginx:latest
- kubect
- ```
+- Descarga el archivo de configuracion de kubernetes y colocalo dentro de `~/.kube/config`
+- Ejecuta los siguientes comandos para hacer una prueba
+
+```
+kubectl get pods
+kubectl run nginx --image=nginx:latest
+kubect
+```

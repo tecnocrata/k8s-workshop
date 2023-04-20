@@ -1,4 +1,4 @@
-# Kubernetes (k8s) Workshop
+# Instalacion de Kubernetes (k8s) con Rancher
 
 ## Instalacion de pre-requisitos
 
@@ -117,14 +117,13 @@ docker run --privileged -d --restart=unless-stopped -v /opt/rancher:/var/lib/ran
 
 ![ Node Registration ](/images/node-registration.png)
 
-
 ## Configurar kubectl en la maquina host
-   
-- Descarga el archivo de configuracion de kubernetes y colocalo dentro de `~/.kube/config`
-- Ejecuta los siguientes comandos para hacer una prueba 
 
- ```
- kubectl get pods
- kubectl run nginx --image=nginx:latest
- kubect
- ```
+- Descarga el archivo de configuracion de kubernetes y colocalo dentro de `~/.kube/config`
+- Ejecuta los siguientes comandos para hacer una prueba
+
+```
+kubectl get pods
+kubectl run nginx --image=nginx:latest
+kubect
+```
