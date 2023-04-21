@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
     node.vm.box_version       = VAGRANT_BOX_VERSION
     node.vm.hostname          = "kmasterx.example.com"
 
-    node.vm.network "private_network", ip: "192.168.56.100"
+    node.vm.network "private_network", ip: "192.168.58.100"
   
     node.vm.provider :virtualbox do |v|
       v.name    = "kmasterx"
@@ -32,11 +32,11 @@ Vagrant.configure(2) do |config|
       v.cpus    = CPUS_MASTER_NODE
     end
   
-    node.vm.provider :libvirt do |v|
-      v.memory  = MEMORY_MASTER_NODE
-      v.nested  = true
-      v.cpus    = CPUS_MASTER_NODE
-    end
+    # node.vm.provider :libvirt do |v|
+    #   v.memory  = MEMORY_MASTER_NODE
+    #   v.nested  = true
+    #   v.cpus    = CPUS_MASTER_NODE
+    # end
   
     node.vm.provision "shell", path: "bootstrap_kmasterx.sh"
   
@@ -53,7 +53,7 @@ Vagrant.configure(2) do |config|
       node.vm.box_version       = VAGRANT_BOX_VERSION
       node.vm.hostname          = "kworkerx#{i}.example.com"
 
-      node.vm.network "private_network", ip: "192.168.56.10#{i}"
+      node.vm.network "private_network", ip: "192.168.58.10#{i}"
 
       node.vm.provider :virtualbox do |v|
         v.name    = "kworkerx#{i}"
@@ -61,11 +61,11 @@ Vagrant.configure(2) do |config|
         v.cpus    = CPUS_WORKER_NODE
       end
 
-      node.vm.provider :libvirt do |v|
-        v.memory  = MEMORY_WORKER_NODE
-        v.nested  = true
-        v.cpus    = CPUS_WORKER_NODE
-      end
+      # node.vm.provider :libvirt do |v|
+      #   v.memory  = MEMORY_WORKER_NODE
+      #   v.nested  = true
+      #   v.cpus    = CPUS_WORKER_NODE
+      # end
 
       node.vm.provision "shell", path: "bootstrap_kworkerx.sh"
 
