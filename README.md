@@ -33,3 +33,8 @@ Este repositorio contiene dos formas de `crear` un cluster de k8s, ambas tienen 
   ```bash
   vboxmanage hostonlyif remove <<network>>
   ```
+
+## Recursos
+
+- [Kubernetes explicado con diagramas](https://phoenixnap.com/kb/understanding-kubernetes-architecture-diagrams)
+- [Tutorial de K8s para principiantes](https://www.youtube.com/watch?v=X48VuDVv0do)
