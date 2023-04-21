@@ -13,8 +13,23 @@ Este repositorio contiene dos formas de `crear` un cluster de k8s, ambas tienen 
 - Descarga el archivo de configuracion de kubernetes y colocalo dentro de `~/.kube/config`
 - Ejecuta los siguientes comandos para hacer una prueba
 
-```
-kubectl get pods
-kubectl run nginx --image=nginx:latest
-kubect
-```
+  ```bash
+  kubectl get pods
+  kubectl run nginx --image=nginx:latest
+  kubectl get all -o wide
+  ```
+
+## Gestion de Virtualbox
+
+- Listado de redes creadas
+
+  ```bash
+  vboxmanage list hostonlyifs
+  ip a s
+  ```
+
+- Borrado de redes
+
+  ```bash
+  vboxmanage hostonlyif remove <<network>>
+  ```
