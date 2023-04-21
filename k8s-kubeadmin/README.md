@@ -35,6 +35,35 @@ vagrant status
   ```bash
   scp root@192.168.58.100:/etc/kubernetes/admin.conf ~/.kube/config
   ```
-- Ejecuta los siguientes comandos para hacer una prueba
+- Ejecuta los siguientes comandos para hacer una prueba basica
 
 ![ kubectl commands ](/images/kubectl-commands.png)
+
+## Deployar un pod con nginx
+
+- Ejecuta los siguientes comandos
+
+  ```bash
+   kubectl create deploy nginx --image nginx
+   kubectl get all
+  ```
+
+  ![ nginx pod running ](/images/nginx-running.png)
+
+- Creamos un servicio con un puerto aleatorio en un nodo del cluster host, ejecutar
+
+  ```bash
+  kubectl expose deploy nginx --port 80 --type NodePort
+  ```
+
+  ![ service exposed ](/images/service-exposed.png)
+
+- Nginx esta corriendo y verificamos, recuerda que el puerto sera diferente, en tu caso:
+
+```bash
+curl 192.168.58.100:<<port>>
+```
+
+![ nginx exposed ](/images/nginx-exposed.png)
+
+![ nginx node ](/images/nginx-node.png)
