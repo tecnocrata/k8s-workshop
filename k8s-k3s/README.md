@@ -42,7 +42,9 @@ Para instrucciones mas detalladas [k3s](https://docs.k3s.io/quick-start)
    ```bash
    curl -sfL https://get.k3s.io | K3S_URL=https://192.168.60.211:6443 K3S_TOKEN=mynodetoken sh -
    ```
-   example: 
+
+   example:
+
    ```
    curl -sfL https://get.k3s.io | K3S_URL=https://192.168.60.211:6443 K3S_TOKEN=K102d5ea79d5b8646429baf360b5594a4220d0204e5ff840eb379bfbec85813630c::server:0800f9be54f80c8ded78a0f7eb6fffe4 K3S_NODE_NAME="node-w2" sh -
    ```
@@ -70,4 +72,11 @@ Para instrucciones mas detalladas [k3s](https://docs.k3s.io/quick-start)
   kubectl get pods
   kubectl run nginx --image=nginx:latest
   kubectl
+  ```
+
+## Configurando kubectl en la maquina host
+
+- Copia el archivo de configuracion de kubernetes y colocalo dentro de `~/.kube/config` usando, el password de los nodos es `kubeadmin`:
+  ```bash
+  scp root@192.168.60.211:/etc/rancher/k3s/k3s.yaml ~/.kube/config
   ```
