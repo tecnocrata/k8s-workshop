@@ -10,32 +10,39 @@ fi
 echo "Actualizando el sistema..."
 pacman -Syu --noconfirm
 
+install_package () {
+    if ! pacman -Q $1 &> /dev/null
+    then
+        echo "Instalando $1..."
+        pacman -S --noconfirm $1
+    else
+        echo "$1 ya está instalado"
+    fi
+}
+
 # Instalar dependencias
-pacman -S --noconfirm --needed base-devel git curl
+install_package base-devel 
+install_package git
+install_package curl
 
 # Instala VirtualBox
-echo "Instalando VirtualBox..."
-pacman -S --noconfirm virtualbox virtualbox-host-modules-arch
+install_package virtualbox 
+install_package virtualbox-host-modules-arch
 
 # Instala libvirt y Virtual Machine Manager (virt-manager)
-echo "Instalando libvirt..."
-pacman -S --noconfirm libvirt virt-manager qemu
+install_package libvirt 
+install_package virt-manager 
+install_package qemu
 
 # Habilita e inicia el servicio libvirtd
 systemctl enable libvirtd.service
 systemctl start libvirtd.service
 
 # Instala Vagrant
-echo "Instalando Vagrant..."
-pacman -S --noconfirm vagrant
-# curl -O https://releases.hashicorp.com/vagrant/2.2.19/vagrant_2.2.19_x86_64.tar.gz
-# tar -xzf vagrant_2.2.19_x86_64.tar.gz
-# mv vagrant /usr/local/bin/
-# rm vagrant_2.2.19_x86_64.tar.gz
+install_package vagrant
 
 # Instala Docker
-echo "Instalando Docker..."
-pacman -S --noconfirm docker
+install_package docker
 
 # Agregar el usuario actual al grupo de Docker para no requerir sudo
 usermod -aG docker $USER
@@ -46,7 +53,6 @@ systemctl enable docker.service
 systemctl start docker.service
 
 # Instala kubectl
-echo "Instalando kubectl..."
-pacman -S --noconfirm kubectl
+install_package kubectl
 
 echo "La instalación ha finalizado. Por favor, reinicia el sistema para aplicar todos los cambios."
