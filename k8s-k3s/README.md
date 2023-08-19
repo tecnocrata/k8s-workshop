@@ -28,7 +28,7 @@ Para instrucciones mas detalladas [k3s](https://docs.k3s.io/quick-start)
 1. En el nodo master ejecutar
 
    ```sh
-   curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE="644" sh -
+   curl -sfL https://get.k3s.io | sh -
    ```
 
 1. Ejecutar, para obtener el token (`mynodetoken`)
