@@ -38,7 +38,7 @@ echo "[TASK 6] Install additional packages"
 apt install -qq -y net-tools >/dev/null 2>&1
 
 echo "[TASK 7] Install NFS support (experimental)"
-apt install nfs-common
+apt install -qq -y nfs-common
 
 #######################################
 # To be executed only on master nodes #
