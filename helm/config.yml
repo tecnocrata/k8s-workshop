@@ -1,0 +1,20 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: primary-pool
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.70.154.10-15.70.154.128
+  autoAssign: true
+  avoidBuggyIPs: true
+
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: l2adv
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - primary-pool
